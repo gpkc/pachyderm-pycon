@@ -1,0 +1,16 @@
+{
+  "pipeline": {
+    "name": "first-pipeline"
+  },
+  "description": "",
+  "input": {
+    "pfs": {
+      "repo": "first-pipeline-input",
+      "glob": "/*"
+    }
+  },
+  "transform": {
+    "image": "gpkc/first_pipeline",
+    "cmd": ["python", "data_ingress.py"]
+  }
+}

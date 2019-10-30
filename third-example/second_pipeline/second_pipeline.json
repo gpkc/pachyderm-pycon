@@ -1,0 +1,16 @@
+{
+  "pipeline": {
+    "name": "second-pipeline"
+  },
+  "description": "",
+  "input": {
+    "pfs": {
+      "repo": "first-pipeline",
+      "glob": "/*"
+    }
+  },
+  "transform": {
+    "image": "gpkc/second_pipeline",
+    "cmd": ["python", "data_process.py"]
+  }
+}

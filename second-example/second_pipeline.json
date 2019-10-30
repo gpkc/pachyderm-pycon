@@ -1,0 +1,24 @@
+{
+  "pipeline": {
+    "name": "second-pipeline"
+  },
+  "description": "",
+  "input": {
+    "pfs": {
+      "repo": "first-pipeline",
+      "glob": "/*"
+    }
+  },
+  "transform": {
+    "image": "ubuntu",
+    "cmd": ["/bin/bash"],
+    "stdin": [
+"echo \"Starting first-example...\"",
+"FILES=$(find  -L /pfs -type f \\( -path '*/first-pipeline/*' \\))",
+"for f in $FILES; do",
+"    echo $(cat $f) - SECOND PIPELINE > /pfs/out/$(basename $f)",
+"done",
+"echo \"Done!\""
+    ]
+  }
+}

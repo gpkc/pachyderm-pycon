@@ -1,0 +1,10 @@
+{
+  "id": "datum1",
+  "length": 100,
+  "headers": [
+    "ColumnA",
+    "ColumnB",
+    "ColumnC"
+  ],
+  "version": 1
+}
