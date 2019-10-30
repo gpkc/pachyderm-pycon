@@ -1,0 +1,9 @@
+{
+  "id": "datum2",
+  "length": 250,
+  "headers": [
+    "AnotherColumn",
+    "YetAgain"
+  ],
+  "version": 1
+}

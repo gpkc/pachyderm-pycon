@@ -1,0 +1,24 @@
+{
+  "pipeline": {
+    "name": "first-example"
+  },
+  "description": "",
+  "input": {
+    "pfs": {
+      "repo": "first-example-input",
+      "glob": "/*"
+    }
+  },
+  "transform": {
+    "image": "ubuntu",
+    "cmd": ["/bin/bash"],
+    "stdin": [
+"echo \"Starting first-example...\"",
+"FILES=$(find  -L /pfs -type f \\( -path '*/first-example-input/*' \\))",
+"for f in $FILES; do",
+"    echo \"Found file $f \"",
+"done",
+"echo \"Done!\""
+    ]
+  }
+}
